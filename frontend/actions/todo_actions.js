@@ -7,6 +7,6 @@ export const receiveTodos = (todos) => ({
 });
 
 export const receiveTodo = (todo) => ({
-  type: RECEIVE_TODOS,
+  type: RECEIVE_TODO,
   todo
 });

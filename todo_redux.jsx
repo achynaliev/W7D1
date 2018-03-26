@@ -1,11 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import { Provider } from 'react-redux'
+import Root from './frontend/components/root';
 
-// import store from './store';
-
-// window.store = store;
-
+import configureStore from './frontend/store/store';
+import { allTodos } from './frontend/reducers/selectors';
 
 const ToDo = () => (
   <h1>
@@ -14,8 +12,11 @@ const ToDo = () => (
 
 
 document.addEventListener("DOMContentLoaded", () => {
+  const store = configureStore();
+  window.store = store;
+  window.todos = allTodos(store.getState());
 	ReactDOM.render(
-		<ToDo />,
+		<Root store={store} />,
 		document.getElementById('root')
 	);
 });
