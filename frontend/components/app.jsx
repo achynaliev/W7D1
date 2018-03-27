@@ -1,12 +1,14 @@
 import React from 'react';
-import TodoListContainer from './todos/todo_list_container';
+import TodoListContainer from './todo_list/todo_list_container';
+import CreateTodo from './todo_list/todo_form';
 
 class App extends React.Component {
-  constuctor(props) {
+  constructor(props) {
+    super(props);
   }
 
   render() {
-    return (<TodoListContainer />);
+    return (<div><TodoListContainer /> </div>);
   }
 }
 
